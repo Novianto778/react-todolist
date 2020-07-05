@@ -6,32 +6,36 @@ import Todos from "../components/Todos";
 
 function TodoLists() {
   const [todos, setTodos] = useState([
-    {text: "Belajar React", isCompleted: false},
-    {text: "Belajar React",isCompleted: false},
-    {text: "Belajar React",isCompleted: false},
-    {text: "Belajar React",isCompleted: false},
-  ])
+    { text: "Belajar React", isCompleted: false },
+    { text: "Belajar Styling di React", isCompleted: false },
+    { text: "Belajar React Hook", isCompleted: false },
+    { text: "Belajar React State Management", isCompleted: false },
+  ]);
 
-  const [showAdd, setShowAdd] = useState(false)
+  const [showAdd, setShowAdd] = useState(false);
 
-  const addTodo = (value)=> {
-    const addedTodo = [...todos, {text: value,isCompleted: false}]
-    setTodos(addedTodo)
-  }
+  const addTodo = (value) => {
+    if (todos.length < 8) {
+      const addedTodo = [...todos, { text: value, isCompleted: false }];
+      setTodos(addedTodo);
+    } else {
+      alert("Only 8 todo allowed");
+    }
+  };
 
-  const showAddToggle =()=> setShowAdd(!showAdd)
+  const showAddToggle = () => setShowAdd(!showAdd);
 
-  const completeTodo = (index)=> {
+  const completeTodo = (index) => {
     const addedTodo = [...todos];
     addedTodo[index].isCompleted = !addedTodo[index].isCompleted;
-    setTodos(addedTodo)
-  }
+    setTodos(addedTodo);
+  };
 
   return (
     <Paper>
-      <Header showAddToggle={showAddToggle} showAdd={showAdd}/>
-      <TodoForm addTodo={addTodo} showAdd={showAdd}/>
-      <Todos todos={todos} completeTodo={completeTodo}/>
+      <Header showAddToggle={showAddToggle} showAdd={showAdd} />
+      <TodoForm addTodo={addTodo} showAdd={showAdd} />
+      <Todos todos={todos} completeTodo={completeTodo} />
     </Paper>
   );
 }
