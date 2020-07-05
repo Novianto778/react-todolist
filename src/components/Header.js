@@ -14,3 +14,4 @@ export default function Header({showAddToggle}) {
 Header.propTypes = {
   showAddToggle : PropTypes.func.isRequired
 }
+
