@@ -10,12 +10,17 @@ function TodoLists() {
     {text: "Belajar React"},
     {text: "Belajar React"},
     {text: "Belajar React"},
-    
   ])
+
+  const addTodo = (value)=> {
+    const addedTodo = [...todos, {text: value}]
+    setTodos(addedTodo)
+  }
+
   return (
     <Paper>
       <Header />
-      <TodoForm />
+      <TodoForm addTodo={addTodo}/>
       <Todos todos={todos}/>
     </Paper>
   );
