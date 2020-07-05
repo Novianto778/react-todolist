@@ -7,6 +7,12 @@ export default function TodoForm({ addTodo, showAdd }) {
     e.preventDefault();
     if (!value) {
       alert("No Blank Todo");
+      
+      return;
+    }
+    if(value.length > 40){
+      alert("Please Create a Shorter Todo");
+      setValue('');
       return;
     }
     addTodo(value);
