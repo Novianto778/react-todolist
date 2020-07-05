@@ -1,19 +1,11 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import Paper from "./components/Paper";
-import Header from "./components/Header";
-import TodoForm from "./components/TodoForm";
-import Todos from "./components/Todos";
+import TodoLists from  "./pages/TodoLists"
 
 function App() {
   return (
     <div className="App">
-      <Paper>
-        <Header />
-        <TodoForm />
-        <Todos />
-      </Paper>
+      <TodoLists/>
     </div>
   );
 }
