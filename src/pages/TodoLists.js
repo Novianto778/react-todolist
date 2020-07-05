@@ -6,10 +6,7 @@ import Todos from "../components/Todos";
 
 function TodoLists() {
   const [todos, setTodos] = useState([
-    { text: "Belajar React", isCompleted: false },
-    { text: "Belajar Styling di React", isCompleted: false },
-    { text: "Belajar React Hook", isCompleted: false },
-    { text: "Belajar React State Management", isCompleted: false },
+    
   ]);
 
   const [showAdd, setShowAdd] = useState(false);
@@ -25,6 +22,8 @@ function TodoLists() {
 
   const showAddToggle = () => setShowAdd(!showAdd);
 
+  const clearTodos = () => setTodos([])
+
   const completeTodo = (index) => {
     const addedTodo = [...todos];
     addedTodo[index].isCompleted = !addedTodo[index].isCompleted;
@@ -33,7 +32,7 @@ function TodoLists() {
 
   return (
     <Paper>
-      <Header showAddToggle={showAddToggle} showAdd={showAdd} />
+      <Header showAddToggle={showAddToggle} showAdd={showAdd} clearTodos={clearTodos}/>
       <TodoForm addTodo={addTodo} showAdd={showAdd} />
       <Todos todos={todos} completeTodo={completeTodo} />
     </Paper>
