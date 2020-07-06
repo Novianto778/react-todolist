@@ -20,9 +20,9 @@ function TodoLists() {
     }
   };
 
-  const showAddToggle = () => setShowAdd(!showAdd);
+  const showAddToggle = () =>  setShowAdd(!showAdd);
 
-  const clearTodos = () => setTodos([])
+  const clearTodos = () => !showAdd && setTodos([])
 
   const completeTodo = (index) => {
     const addedTodo = [...todos];
