@@ -59,24 +59,6 @@ body {
   min-height: 500px;
 }
 
-.todo {
-  position: relative;
-  flex: 1 0 auto;
-  text-align: center;
-  max-height: 34px;
-  margin: 16px 0 0;
-  font-size: 24px;
-  border-bottom: 1px solid var(--main-red-color);
-}
-
-.todo-text {
-  position: absolute;
-  height: 50px;
-  width: 100%;
-  left: 50%;
-  transform: translate(-50%);
-}
-
 .todo-placeholder-text {
   font-size: 24px;
   text-align: center;

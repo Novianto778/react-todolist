@@ -14,7 +14,7 @@ export default function Header({ showAddToggle, showAdd, clearTodos }) {
 
       <Button
         onClick={showAddToggle}
-        text={showAdd ? "FInish" : "Add"}
+        text={showAdd ? "Finish" : "Add"}
         color={"black"}
         align={"left"}
       />
