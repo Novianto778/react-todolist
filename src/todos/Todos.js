@@ -1,10 +1,11 @@
 import React from "react";
 import Todo from "../todo/Todo";
 import PropTypes from "prop-types";
+import styles from "./todos.module.css"
 
 export default function Todos({ todos, completeTodo }) {
   return (
-    <section className="todos">
+    <section className={styles.todos}>
       {todos.length > 0 &&
         todos.map((todo, index) => {
           return (
@@ -18,9 +19,9 @@ export default function Todos({ todos, completeTodo }) {
           );
         })}
       {todos.length === 0 && (
-        <div className="todo-placeholder-text">
+        <div className={styles.todoPlaceholderText}>
           Add Todo by Clicking{" "}
-          <span className="add-button-placeholder-text">Add</span> Button on The
+          <span className={styles.addButtonPlaceholderText}>Add</span> Button on The
           Top Left Corner
         </div>
       )}
