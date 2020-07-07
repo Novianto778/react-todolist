@@ -23,36 +23,6 @@ body {
   background: #2d2d2d;
 }
 
-.add {
-  padding: 16px;
-}
-
-.add-form {
-  display: flex;
-  align-items: center;
-}
-
-.add-input {
-  background: unset;
-  border: unset;
-  padding: 0 64px;
-  flex: 1;
-  border-bottom: 1px solid var(--main-red-color);
-  outline: unset;
-  font-size: 16px;
-  text-transform: lowercase;
-}
-
-.add-btn {
-  font-size: 1.8rem;
-  padding: 16px;
-  padding-right: unset;
-  cursor: pointer;
-  background: unset;
-  border: unset;
-  outline: unset;
-}
-
 .todos {
   display: flex;
   flex-direction: column;
