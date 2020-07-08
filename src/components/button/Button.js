@@ -1,7 +1,10 @@
+
 import React from "react";
+import { jsx } from '@emotion/core'
 import PropTypes from "prop-types";
 import cx from "classnames";
-import styles from "./button.module.css";
+// import styles from "./button.module.css";
+import * as styles from "./button.styles"
 
 
 export default function Button({ text, onClick, color,align }) {
@@ -13,14 +16,17 @@ export default function Button({ text, onClick, color,align }) {
   //   align === "right" && "align-right"
   // ].join(" ")
 
-  const classNames = cx(styles.headerBtn,{
-    [styles.mainBlackColor]: color === "black",
-    [styles.mainRedColor]: color === "red",
-    [styles.alignLeft]: align === "left",
-    [styles.alignRight]: align === "right",
-  })
+  // const classNames = cx(styles.headerBtn,{
+  //   [styles.mainBlackColor]: color === "black",
+  //   [styles.mainRedColor]: color === "red",
+  //   [styles.alignLeft]: align === "left",
+  //   [styles.alignRight]: align === "right",
+  // })
 
-  return <button className={classNames} onClick={onClick}>{text}</button>;
+  return (
+  // <button className={classNames} onClick={onClick}>{text}</button>
+  <button css={styles.button({color, align})} onClick={onClick}>{text}</button>
+  );
 }
 
 Button.defaultProps = {
