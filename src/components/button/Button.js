@@ -1,13 +1,11 @@
-
 import React from "react";
-import { jsx } from '@emotion/core'
 import PropTypes from "prop-types";
-import cx from "classnames";
+// import cx from "classnames";
 // import styles from "./button.module.css";
-import * as styles from "./button.styles"
+import * as styles from "./button.styles";
+import { useTheme } from "emotion-theming";
 
-
-export default function Button({ text, onClick, color,align }) {
+export default function Button({ text, onClick, color, align }) {
   // const className = [
   //   "header-btn",
   //   color === "black" && "main-black-color",
@@ -22,23 +20,25 @@ export default function Button({ text, onClick, color,align }) {
   //   [styles.alignLeft]: align === "left",
   //   [styles.alignRight]: align === "right",
   // })
+  const theme = useTheme();
 
   return (
-  // <button className={classNames} onClick={onClick}>{text}</button>
-  <button css={styles.button({color, align})} onClick={onClick}>{text}</button>
+    // <button className={classNames} onClick={onClick}>{text}</button>
+    <button css={styles.button({ color, align, theme })} onClick={onClick}>
+      {text}
+    </button>
   );
 }
 
 Button.defaultProps = {
   text: "button",
   color: "black",
-  align: "left"
-}
+  align: "left",
+};
 
 Button.propTypes = {
   text: PropTypes.string.isRequired,
   onClick: PropTypes.func,
   color: PropTypes.oneOf(["black", "red"]),
   align: PropTypes.oneOf(["left", "right"]),
-
 };
