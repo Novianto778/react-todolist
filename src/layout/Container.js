@@ -9,6 +9,7 @@ export default function Container({
   justifyContent,
   alignItems,
   alignContent,
+  height,
 }) {
   const containerStyles = css`
     display: flex;
@@ -76,6 +77,7 @@ Container.propTypes = {
     "first-baseline",
     "last-baseline"
   ),
+  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
 
 Container.defaultProps = {
@@ -84,4 +86,5 @@ Container.defaultProps = {
   justifyContent: "flex-start",
   alignItems: "stretch",
   alignContent: "stretch",
+  height: "auto",
 };

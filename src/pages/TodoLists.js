@@ -3,10 +3,13 @@ import Paper from "../components/paper/Paper";
 import Header from "../components/header/Header";
 import TodoForm from "../todoform/TodoForm";
 import Todos from "../todos/Todos";
+import Container from "../layout/Container";
+import Item from "../layout/Item";
 
 function TodoLists() {
   const [todos, setTodos] = useState([
-    
+    { text: "Learning React", isCompleted: false },
+    { text: "Learning React", isCompleted: false },
   ]);
 
   const [showAdd, setShowAdd] = useState(false);
@@ -20,9 +23,9 @@ function TodoLists() {
     }
   };
 
-  const showAddToggle = () =>  setShowAdd(!showAdd);
+  const showAddToggle = () => setShowAdd(!showAdd);
 
-  const clearTodos = () => !showAdd && setTodos([])
+  const clearTodos = () => !showAdd && setTodos([]);
 
   const completeTodo = (index) => {
     const addedTodo = [...todos];
@@ -32,9 +35,15 @@ function TodoLists() {
 
   return (
     <Paper>
-      <Header showAddToggle={showAddToggle} showAdd={showAdd} clearTodos={clearTodos}/>
-      <TodoForm addTodo={addTodo} showAdd={showAdd} />
-      <Todos todos={todos} completeTodo={completeTodo} />
+      <Container flexDirection="column" justifyContent="space-between" height="100%">
+        <Header
+          showAddToggle={showAddToggle}
+          showAdd={showAdd}
+          clearTodos={clearTodos}
+        />
+        <TodoForm addTodo={addTodo} showAdd={showAdd} />
+        <Todos todos={todos} completeTodo={completeTodo} />
+      </Container>
     </Paper>
   );
 }
