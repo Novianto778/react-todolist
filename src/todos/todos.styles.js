@@ -6,7 +6,7 @@ export const todos = () => css`
   min-height: 500px;
 `;
 
-export const todoPlaceHolderText = () => css`
+export const todoPlaceholderText = () => css`
   font-size: 24px;
   text-align: center;
   padding: 16px;
