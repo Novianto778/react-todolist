@@ -8,7 +8,7 @@ export const header = () => css`
 export const headerTitle = (theme) => css`
   text-align: center;
   /* flex: 1; */
-  width: 52%;
+  // width: 52%;
   font-size: 3.6rem;
   text-transform: lowercase;
   padding: 20px 0;

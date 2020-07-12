@@ -20,7 +20,7 @@ export const button = ({ color,align, theme }) => {
   font-size: 1.8rem;
   color : ${textColor};
   padding: 16px;
-  width: 24%;
+  // width: 24%;
   background: unset;
   border: unset;
   outline: unset;

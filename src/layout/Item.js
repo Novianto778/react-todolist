@@ -2,12 +2,13 @@ import React from "react";
 import { css } from "@emotion/core";
 import PropTypes from "prop-types";
 
-export default function Item({ children, item }) {
+export default function Item({ children, flex, align }) {
   return (
     <div
       className="flex-item"
       css={css`
         flex: ${flex};
+        text-align:${align};
       `}
     >
       {children}
@@ -20,5 +21,6 @@ Item.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]),
-  flex: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+  flex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  align: PropTypes.oneOf(["left", "center", "right", "justify"]),
 };
